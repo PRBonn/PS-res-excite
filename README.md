@@ -36,7 +36,7 @@ Quantitative results of our method against baselines for Semantic Segmentation o
 For further quantitative results, please refer to the [paper]()! :wink:
 
 Qualitative results of our method against baselines on the HyperSim dataset:
-![results](pics/hypersim1.png)
+![results](pics/hypersim1.jpg)
 
 ## Code
 Coming soon!
