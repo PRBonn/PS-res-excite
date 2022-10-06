@@ -16,6 +16,9 @@ Quantitative results of our method against baselines (further details on the lin
 |ESANet with SE|ScanNet|37.09|54.01|
 |Ours with CBAM|ScanNet|39.11|58.11|
 |Ours with ResidualExcite|ScanNet|**40.87**|**58.98**|
+
+|Method|Dataset|PQ|mIoU|
+|:------:|:-------:|:------:|:-----:|
 |RGB Panoptic DeepLab|HyperSim|26.10|40.45|
 |RGB-D Panoptic DeepLab|HyperSim|28.56|41.08|
 |ESANet with Addition|HyperSim|32.18|50.74|
@@ -23,6 +26,7 @@ Quantitative results of our method against baselines (further details on the lin
 |Ours with CBAM|HyperSim|37.02|54.21|
 |Ours with ResidualExcite|HyperSim|**38.67**|**55.14**|
 
+<br/>
 
 Quantitative results of our method against baselines for Semantic Segmentation only (further details on the linked paper):
 |Method|Dataset|mIoU|
@@ -34,6 +38,8 @@ Quantitative results of our method against baselines for Semantic Segmentation o
 |Ours (semantic-only)|ScanNet|**69.78**|
 
 For further quantitative results, please refer to the [paper]()! :wink:
+
+<br/>
 
 Qualitative results of our method against baselines on the HyperSim dataset (more nice qualitative results on the paper! :grin:):
 ![results](pics/hypersim1.jpg)
