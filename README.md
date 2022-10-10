@@ -52,7 +52,13 @@ Pre-trained models should go in a ad-hoc `trained_models` folder. Some models, s
 ## Citation
 If you use our framework for any academic work, please cite the original [paper](https://arxiv.org/abs/2210.02834)!
 
-> bibtex entry coming soon!
+> @article{sodano2022robust,
+>  title={Robust Double-Encoder Network for RGB-D Panoptic Segmentation},
+>  author={Sodano, Matteo and Magistri, Federico and Guadagnino, Tiziano and Behley, Jens and Stachniss, Cyrill},
+>  journal={arXiv preprint arXiv:2210.02834},
+>  year={2022}
+>}
+
 
 ## Acknowledgment
 This work has partially been funded by the European Union’s Horizon 2020 research and innovation programme under grant agreement No 101017008 (Harmony).
