@@ -45,7 +45,8 @@ Qualitative results of our method against baselines on the HyperSim dataset (mor
 ![results](pics/hypersim1.jpg)
 
 ## Code
-Coming soon!
+After installing the requirements specified in the file `requirements.yml` (for example in form of a conda environment), for training your model you only need to `python train.py` and specify your favourite settings in `src/config.yaml`.
+Some pre-trained model, such as the pretraining on Imagenet of the ResNet34 model with Non-Bottleneck-1D blocks, are present in the folder `trained_models`. More to come!
 
 ## Citation
 If you use our framework for any academic work, please cite the original [paper](https://arxiv.org/abs/2210.02834)!

@@ -1,0 +1,54 @@
+PATHS:
+  RESULTS_DIR: './results'        # folder to store results
+  RESULTS_FOLDER: 'test'          # subfolder to store results within RESULTS_DIR (useful if more parallel trainings are on)
+  LAST_CKPT: False                # path to the pt model
+  PRETRAINED_DIR: './trained_models/imagenet'   # path to imagenet weights
+
+DATA:
+  SEM_CLASSES: 21       # number of classes for semantic segmentation
+  EMB_DIMENSION: 32     # dimension of vectors for embedding prediction
+  BATCH_SIZE: 1         # batch size dimension at training time
+  BATCH_SIZE_VALID: 2   # batch size dimension at validation time
+  HEIGHT: 480           # height of input image
+  WIDTH: 640            # width of input image
+  ROBUST: False         # if True, the network trains by randomly dropping either rgb or depth
+  DEBUG: False          # either False for normal training, or =N for processing only N images
+  SAVE_IMG_TRAIN: 100   # epoch when we start saving images from training
+  SAVE_IMG_VALID: 100   # epoch when we start saving images from validation
+  SAVE_IMG_EVERY: 50    # save image every N epochs
+
+HYPERPARAMS:
+  EPOCHS: 1001          # number of epochs
+  LR: 0.001              # learning rate
+  W_DECAY: 0.0001        # weight decay factor
+  MOMENTUM: 0.9         # momentum
+  OPTIMIZER: 'adamw'     # optimizer
+  SCHEDULER: 'onecycle' # scheduler
+  CLASS_WEIGHT: None    # weight per class
+  PQ_WAIT: 100          # number of epochs skipped by PQ computation
+
+MODEL:
+  ACTIVATION: 'relu'                  # which activation function to use
+  BACKBONE: 'resnet34'                # resnet version
+  ENC_BLOCK: 'NonBottleneck1D'        # encoder block: NonBottleneck1D or BasicBlock
+  N_DEC_BLOCKS: [3]                   # number of blocks per decoder layer
+  BACKBONE_DEPTH: 'resnet34'          # encoder for depth channel
+  MODALITY: 'rgbd'                    # choose between rgbd, rgb, depth, rgbd_single (for single encoder processing of rgbd as a 4D data)
+  ENC_DEC_FUSION: 'add'               # type of encoder-decoder skip connection (only sum supported SO FAR)
+  CONTEXT_MODULE: 'None'              # appm = average pyramid pooling module
+  UPSAMPLING: 'learned-3x3-zeropad'   # mimics a bilinear interpolation with nearest neighbor interpolation and a 3x3 conv afterwards
+  ENCODERS_FUSION: 'SE-add'           # how to fuse encoders features: either add, SE-add, SelfAttention, excite, ResidualExcite, ResidualAttention
+  PATCH_SIZE: 'global'                # dimension of patches for MHA. global = GCD of smaller feature map. layerwise = layer-wise GCD
+  BOTTLENECK_DIM: 32                  # number of channels of after 1x1-Conv2D for Attention
+  HE_INIT: False                      # If True, sets convolutional layers with He initialization
+
+DATASET:
+  DATASET: 'scannet'                          # dataset: either scannet or hypersim
+  DATASET_DIR: '/home/matteo/Code/Scannet/'   # path to dataset
+
+OTHERS:
+  WORKERS: 8          # number of workers for dataloader
+  DEBUG: False        # if True, only one batch will be processed in train and validation
+  SAVE_CKPT: False     # if False, it does NOT save any checkpoint
+  CHECK_MODEL: False  # if True, prints summary and exits
+  GPU: 0              # gpu number (useful for training on systems with multiple gpus)
