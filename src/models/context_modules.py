@@ -1,4 +1,8 @@
 # -*- coding: utf-8 -*-
+"""
+Part of this code is taken and adapted from:
+https://github.com/TUI-NICR/ESANet/blob/main/src/models/context_modules.py
+"""
 
 import torch
 import torch.nn as nn
