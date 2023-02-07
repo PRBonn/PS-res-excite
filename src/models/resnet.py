@@ -499,20 +499,3 @@ def load_pretrained_with_different_encoder_block(
           f'pretrained on ImageNet')
     print(ckpt_path)
     return model
-
-
-if __name__ == '__main__':
-    model = ResNet18(block='NonBottleneck1D', pretrained_on_imagenet=True,
-                     with_se=True, dilation=[1]*4)
-
-    model.eval()
-    print(model)
-    image = torch.randn(1, 3, 224, 224)
-
-    from torch.autograd import Variable
-
-    inputs = Variable(image)
-    with torch.no_grad():
-        outputs = model(inputs)
-    for tensor in outputs:
-        print(tensor.shape)
