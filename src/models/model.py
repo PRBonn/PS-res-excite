@@ -1,4 +1,9 @@
 # -*- coding: utf-8 -*-
+"""
+This code builds on top and expands the one in:
+https://github.com/TUI-NICR/ESANet/blob/main/src/models/model.py
+"""
+
 
 import warnings
 import numpy as np
