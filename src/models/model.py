@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 """
+.. codeauthor:: Matteo Sodano <matteo.sodano@igg.uni-bonn.de>
+
 This code builds on top and expands the one in:
 https://github.com/TUI-NICR/ESANet/blob/main/src/models/model.py
 """
