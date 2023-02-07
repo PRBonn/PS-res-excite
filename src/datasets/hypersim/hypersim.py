@@ -1,27 +1,13 @@
 # -*- coding: utf-8 -*-
+"""
+.. codeauthor:: Matteo Sodano <matteo.sodano@igg.uni-bonn.de>
+"""
+
 import csv
 
 
 class HYPERSIMBase:
     SPLITS = ['train', 'test']
-
-    """labels_numbers = []
-    labels_names = []
-    with open('/home/matteo/Code/Panoptic_Segmentation/rgbd/src/datasets/scannet/nyu_labels.txt') as f:
-        fs = csv.reader(f, delimiter=' ')
-        for line in fs:
-            labels_numbers.append(int(line[0]))
-            labels_names.append(line[1])
-
-    labels_mapping = {}
-    with open('/home/matteo/Code/Panoptic_Segmentation/rgbd/src/datasets/scannet/scannetv2-labels.combined.tsv') as f:
-        rd = csv.reader(f, delimiter='\t')
-        for i, row in enumerate(rd):
-            if i > 0:
-                scannet_label = int(row[0])
-                nyu_label = int(row[4])
-                if nyu_label in labels_numbers:
-                    labels_mapping[scannet_label] = nyu_label"""
 
     # number of classes
     N_CLASSES = 41
