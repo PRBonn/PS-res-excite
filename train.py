@@ -1,4 +1,7 @@
 # -*- coding: utf-8 -*-
+"""
+.. codeauthor:: Matteo Sodano <matteo.sodano@igg.uni-bonn.de>
+"""
 
 from datetime import datetime
 import os
