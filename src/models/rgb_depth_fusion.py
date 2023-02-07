@@ -1,4 +1,9 @@
 # -*- coding: utf-8 -*-
+"""
+The class SqueezeAndExciteFusionAdd is copied from
+https://github.com/TUI-NICR/ESANet/blob/main/src/models/rgb_depth-fusion.py
+"""
+
 import torch
 import torch.nn as nn
 from src.models.model_utils import SqueezeAndExcitation, Excitation
