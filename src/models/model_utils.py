@@ -1,4 +1,9 @@
 # -*- coding: utf-8 -*-
+"""
+This code expands:
+https://github.com/TUI-NICR/ESANet/blob/main/src/models/model_utils.py
+"""
+
 
 import torch
 import torch.nn as nn
@@ -63,47 +68,3 @@ class Excitation(nn.Module):
         weighting = self.fc(x)
         y = x * weighting
         return y
-
-class SqueezeAndExcitationTensorRT(nn.Module):
-    def __init__(self, channel,
-                 reduction=16, activation=nn.ReLU(inplace=True)):
-        super(SqueezeAndExcitationTensorRT, self).__init__()
-        self.fc = nn.Sequential(
-            nn.Conv2d(channel, channel // reduction, kernel_size=1),
-            activation,
-            nn.Conv2d(channel // reduction, channel, kernel_size=1),
-            nn.Sigmoid()
-        )
-
-    def forward(self, x):
-        # TensorRT restricts the maximum kernel size for pooling operations
-        # by "MAX_KERNEL_DIMS_PRODUCT" which leads to problems if the input
-        # feature maps are of large spatial size
-        # -> workaround: use cascaded two-staged pooling
-        # see: https://github.com/onnx/onnx-tensorrt/issues/333
-        if x.shape[2] > 120 and x.shape[3] > 160:
-            weighting = F.adaptive_avg_pool2d(x, 4)
-        else:
-            weighting = x
-        weighting = F.adaptive_avg_pool2d(weighting, 1)
-        weighting = self.fc(weighting)
-        y = x * weighting
-        return y
-
-
-class Swish(nn.Module):
-    def forward(self, x):
-        return swish(x)
-
-
-def swish(x):
-    return x * torch.sigmoid(x)
-
-
-class Hswish(nn.Module):
-    def __init__(self, inplace=True):
-        super(Hswish, self).__init__()
-        self.inplace = inplace
-
-    def forward(self, x):
-        return x * F.relu6(x + 3., inplace=self.inplace) / 6.
