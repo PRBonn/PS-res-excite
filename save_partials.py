@@ -1,3 +1,7 @@
+"""
+.. codeauthor:: Matteo Sodano <matteo.sodano@igg.uni-bonn.de>
+"""
+
 import skimage.io as io
 import matplotlib.pyplot as plt
 from src.post_processing import *
