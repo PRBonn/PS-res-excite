@@ -1,4 +1,10 @@
 # -*- coding: utf-8 -*-
+"""
+.. codeauthor:: Matteo Sodano <matteo.sodano@igg.uni-bonn.de>
+
+Parts of this code are taken and adapted from:
+https://github.com/TUI-NICR/ESANet/blob/main/datasets/dataset_base.py
+"""
 
 import os
 import pickle
