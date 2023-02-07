@@ -1,4 +1,8 @@
 # -*- coding: utf-8 -*-
+"""
+Parts of this code are taken and adapted from:
+https://github.com/TUI-NICR/ESANet/blob/main/src/preprocessing.py
+"""
 
 import cv2
 import matplotlib
