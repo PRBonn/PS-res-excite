@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 """
+.. codeauthor:: Matteo Sodano <matteo.sodano@igg.uni-bonn.de>
+
 The class SqueezeAndExciteFusionAdd is copied from
 https://github.com/TUI-NICR/ESANet/blob/main/src/models/rgb_depth-fusion.py
 """
