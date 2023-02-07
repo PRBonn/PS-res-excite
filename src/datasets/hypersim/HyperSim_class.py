@@ -1,4 +1,8 @@
 # -*- coding: utf-8 -*-
+"""
+.. codeauthor:: Matteo Sodano <matteo.sodano@igg.uni-bonn.de>
+"""
+
 import os
 import h5py
 import imageio
