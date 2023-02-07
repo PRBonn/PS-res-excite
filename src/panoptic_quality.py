@@ -1,3 +1,7 @@
+"""
+.. codeauthor:: Matteo Sodano <matteo.sodano@igg.uni-bonn.de>
+"""
+
 import torch
 
 
