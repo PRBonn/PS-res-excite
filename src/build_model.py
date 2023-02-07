@@ -1,4 +1,8 @@
 # -*- coding: utf-8 -*-
+"""
+Part of this code is taken and adapted from:
+https://github.com/TUI-NICR/ESANet/blob/main/src/build_model.py
+"""
 
 import warnings
 
@@ -62,31 +66,8 @@ def build_model(config, n_classes):
         )
 
     else:  # just one modality
-        if model_param['MODALITY'] == 'rgb':
-            input_channels = 3
-        elif model_param['MODALITY'] == 'depth':
-            input_channels = 1
-        elif model_param['MODALITY'] == 'rgbd_single':
-            input_channels = 4
-            pretrained_on_imagenet = False
-
-        model = ESANetOneModality(
-            height=data['HEIGHT'],
-            width=data['WIDTH'],
-            pretrained_on_imagenet=pretrained_on_imagenet,
-            encoder=model_param['BACKBONE'],
-            encoder_block=model_param['ENC_BLOCK'],
-            activation=model_param['ACTIVATION'],
-            input_channels=input_channels,
-            encoder_decoder_fusion=model_param['ENC_DEC_FUSION'],
-            context_module=model_param['CONTEXT_MODULE'],
-            num_classes=n_classes,
-            pretrained_dir=paths['PRETRAINED_DIR'],
-            nr_decoder_blocks=nr_decoder_blocks,
-            channels_decoder=channels_decoder,
-            weighting_in_encoder=model_param['ENCODERS_FUSION'],
-            upsampling=model_param['UPSAMPLING']
-        )
+        print("Not implemented")
+        exit()
 
     print('Device:', device)
     model.to(device)
