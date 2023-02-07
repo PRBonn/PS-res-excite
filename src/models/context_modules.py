@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 """
+.. codeauthor:: Matteo Sodano <matteo.sodano@igg.uni-bonn.de>
+
 Part of this code is taken and adapted from:
 https://github.com/TUI-NICR/ESANet/blob/main/src/models/context_modules.py
 """
